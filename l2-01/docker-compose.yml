@@ -1,7 +1,9 @@
 # Advantech L2-01 AI development Docker Compose file
+# Created and maintained by Samir Singh <samir.singh@advantech.com> and Apoorv Saxena <apoorv.saxena@advantech.com>
+# Copyright (c) 2025 Advantech Corporation. All rights reserved.
 services:
   advantech-l2-01:
-    image: harbor.arfa.wise-paas.com/advantech_coa_container/advantech-l2-01:l2-01
+    image: harbor.arfa.wise-paas.com/advantech_coe_container/l2-01:nv
     container_name: advantech-l2-01
     tty: true
     stdin_open: true
