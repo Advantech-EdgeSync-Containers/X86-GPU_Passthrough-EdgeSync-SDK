@@ -1,0 +1,78 @@
+services:
+  advantech:
+    image: harbor.arfa.wise-paas.com/advantech_coa_container/advantech_coa:l1-01
+    container_name: advantech-l1-01
+    privileged: true
+    volumes:
+      - /home/:/volume
+      - type: bind
+        source: /opt/Advantech/susi/service/
+        target: /opt/Advantech/susi/service/
+        read_only: true
+      - type: bind
+        source: /etc/Advantech/susi/service/
+        target: /etc/Advantech/susi/service/
+        read_only: true
+      - type: bind
+        source: /usr/lib/x86_64-linux-gnu/libjansson.so.4
+        target: /usr/lib/x86_64-linux-gnu/libjansson.so.4
+        read_only: true
+      - type: bind
+        source: /usr/lib/libjansson.so.4
+        target: /usr/lib/libjansson.so.4
+        read_only: true
+      - type: bind
+        source: /usr/lib/libjansson.so
+        target: /usr/lib/libjansson.so
+        read_only: true
+      - type: bind
+        source: /usr/lib/libSusiIoT.so
+        target: /usr/lib/libSusiIoT.so
+        read_only: true
+      - type: bind
+        source: /usr/lib/libSUSIDevice.so.1
+        target: /usr/lib/libSUSIDevice.so.1
+        read_only: true
+      - type: bind
+        source: /usr/lib/libSUSIDevice.so
+        target: /usr/lib/libSUSIDevice.so
+        read_only: true
+      - type: bind
+        source: /usr/lib/libSUSIAI.so.1
+        target: /usr/lib/libSUSIAI.so.1
+        read_only: true
+      - type: bind
+        source: /usr/lib/libSUSIAI.so
+        target: /usr/lib/libSUSIAI.so
+        read_only: true
+      - type: bind
+        source: /usr/lib/libSUSI-4.00.so.1adv
+        target: /usr/lib/libSUSI-4.00.so.1
+        read_only: true
+      - type: bind
+        source: /usr/lib/libSUSI-4.00.so
+        target: /usr/lib/libSUSI-4.00.so
+        read_only: true
+      - type: bind
+        source: /usr/lib/libSUSI-3.02.so.1
+        target: /usr/lib/libSUSI-3.02.so.1
+        read_only: true
+      - type: bind
+        source: /usr/lib/libSUSI-3.02.so
+        target: /usr/lib/libSUSI-3.02.so
+        read_only: true
+      - type: bind
+        source: /usr/lib/libEApi.so.1
+        target: /usr/lib/libEApi.so.1
+        read_only: true
+      - type: bind
+        source: /usr/lib/libEApi.so
+        target: /usr/lib/libEApi.so
+        read_only: true
+      - type: bind
+        source: /usr/lib/Advantech
+        target: /usr/lib/Advantech
+        read_only: true
+    tty: true
+    stdin_open: true
+    command: bash

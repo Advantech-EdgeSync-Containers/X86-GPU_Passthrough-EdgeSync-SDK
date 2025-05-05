@@ -1,0 +1,26 @@
+# Advantech L2-01 AI development Docker Compose file
+services:
+  advantech-l2-01:
+    image: harbor.arfa.wise-paas.com/advantech_coa_container/advantech-l2-01:l2-01
+    container_name: advantech-l2-01
+    tty: true
+    stdin_open: true
+    privileged: true
+    runtime: nvidia
+    environment:
+      - DISPLAY=${DISPLAY}
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all,compute,video,utility,graphics
+      - TF_FORCE_GPU_ALLOW_GROWTH=true
+    volumes:
+      - ./src:/advantech/src
+      - ./models:/advantech/models
+      - ./data:/advantech/data
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
