@@ -4,10 +4,10 @@
 
 ## Overview
 
-The **X86-GPU_Passthrough-EdgeSync-SDK** provides a comprehensive environment for Advantech hardware monitoring and AI application development. This repository includes two specialized containers:
+The **X86-GPU_Passthrough-EdgeSync-SDK** provides a comprehensive environment for Advantech hardware monitoring and GPU Usage. This repository includes two specialized containers:
 
 - **L1-01 Container**: Access Advantech hardware through the EdgeSync-SDK
-- **L2-01 Container**: Edge AI development environment with NVIDIA GPU acceleration
+- **L2-01 Container**: Base Image with NVIDIA GPU passthrough
 
 ## Repository Structure
 
@@ -54,7 +54,7 @@ chmod +x build.sh
 sudo ./build.sh
 ```
 
-#### For AI development with GPU acceleration (L2-01):
+#### For AI development with GPU passthrough (L2-01):
 
 ```bash
 cd L2-01
@@ -64,7 +64,7 @@ chmod +x build.sh
 
 ## L1-01: EdgeSync-Adv Container
 
-The L1-01 container provides access to Advantech hardware features through the SUSI (Secure, Unified, and Smart Interface) APIs.
+The L1-01 container provides access to Advantech hardware features through the SUSI  APIs.
 
 As in [GitHub - EdgeSync-Adv/advantechiot](https://github.com/EdgeSync-Adv/advantechiot):
 ### Key Features
@@ -111,14 +111,10 @@ for gpio_name in device.gpio.pins:
 
 ## L2-01: Edge-AI-enabled Container
 
-The L2-01 container provides a development environment for AI applications with full GPU acceleration.
+The L2-01 container provides a development environment for AI applications with full GPU passthrough.
 
-### Key Features
-- Full NVIDIA GPU hardware acceleration
-- Pre-configured AI development environment
-- Support for high-performance deep learning
 
-### Hardware Specifications
+### Tested On:
 
 | Component | Specification |
 |-----------|---------------|
@@ -172,9 +168,8 @@ The container uses the following Docker settings:
 
 ### L1-01 Container Issues
 
-- **Module Import Errors**: Verify package installation with `pip list | grep advantechiot`
-- **Hardware Detection Problems**: Ensure SUSI drivers are properly installed
-- **Permission Issues**: Make sure to run the container with `sudo` for hardware access
+For issues related to the advantechiot package:
+- Create an issue on GitHub: https://github.com/EdgeSync-Adv/advantechi
 
 ### L2-01 Container Issues
 
@@ -183,9 +178,6 @@ The container uses the following Docker settings:
 - **Container Startup Failures**: Ensure NVIDIA Container Toolkit is installed
 
 ## Support and Contact
-
-For issues related to the advantechiot package:
-- Create an issue on GitHub: https://github.com/EdgeSync-Adv/advantechiot
 
 For other issues with these containers:
 - Contact Advantech support
