@@ -112,4 +112,4 @@ fi
 
 # Connect to container
 echo "Connecting to container..."
-docker exec -it advantech-l2-01 bash
+docker exec -it advantech-l1-01 bash
