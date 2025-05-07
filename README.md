@@ -19,7 +19,9 @@ X86-GPU_Passthrough-EdgeSync-SDK/
 │
 └── L2-01/                # Edge-AI-enabled container
     ├── build.sh          # Build script for L2-01 container
-    └── docker-compose.yml # Docker configuration
+    ├── docker-compose.yml # Docker configuration
+    ├── wise-test.sh/         # WiseTest 
+    └── cuda_diagnostic.sh # CUDA diagnostic script
 ```
 
 ## Installation Requirements
