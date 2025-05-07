@@ -50,7 +50,6 @@ sleep 7
 
 # Create project directory structure
 echo "Creating project directory structure..."
-mkdir -p src models data diagnostics
 
 # Function to check if a command exists
 command_exists() {
