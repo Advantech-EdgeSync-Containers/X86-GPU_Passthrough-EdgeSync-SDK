@@ -3,26 +3,33 @@
 # Copyright (c) 2025 Advantech Corporation. All rights reserved.
 services:
   advantech-l2-01:
-    image: harbor.arfa.wise-paas.com/advantech_coe_container/advantech-coe-l2-01:nv
+    image: harbor.arfa.wise-paas.com/advantech_coe_container/advantech-coe-l2-01:nv-updated2
     container_name: advantech-l2-01
     tty: true
     stdin_open: true
     privileged: true
     runtime: nvidia
+    ls
+    restart: unless-stopped
     environment:
-      - DISPLAY=${DISPLAY}
       - NVIDIA_VISIBLE_DEVICES=all
-      - NVIDIA_DRIVER_CAPABILITIES=all,compute,video,utility,graphics
-      - TF_FORCE_GPU_ALLOW_GROWTH=true
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    # Mount volumes for data and code
     volumes:
-      - ./src:/advantech/src
-      - ./models:/advantech/models
-      - ./data:/advantech/data
-      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./app:/advantech
+    # Configure shared memory (important for certain GPU workloads)
+    shm_size: 8g
+    # Configure GPU requirements
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
-              count: all
+              count: all  # Use all available GPUs
               capabilities: [gpu]
+    # Uncomment if you need to expose ports
+    # ports:
+    #   - "8888:8888"  # Example port for Jupyter notebooks
+    
+    # Keep the container running
+    command: tail -f /dev/null
