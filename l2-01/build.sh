@@ -112,16 +112,16 @@ fi
 
 # Copy files to the container
 echo "Copying CUDA diagnostic scripts to container..."
-if [ -f "cuda-test.sh" ] && [ -f "cuda-diagnostic.sh" ]; then
-    docker cp cuda-test.sh advantech-l2-01:/advantech/
+if [ -f "wise-test.sh" ] && [ -f "cuda-diagnostic.sh" ]; then
+    docker cp wise-test.sh advantech-l2-01:/advantech/
     docker cp cuda-diagnostic.sh advantech-l2-01:/advantech/
     # Make the scripts executable
-    docker exec advantech-l2-01 chmod +x /advantech/cuda-test.sh
+    docker exec advantech-l2-01 chmod +x /advantech/wise-test.sh
     docker exec advantech-l2-01 chmod +x /advantech/cuda-diagnostic.sh
     echo "CUDA diagnostic scripts copied successfully."
 else
     echo "Error: One or both CUDA diagnostic scripts not found in the current directory."
-    echo "Please ensure cuda-test.sh and cuda-diagnostic.sh exist in the same directory as this script."
+    echo "Please ensure wise-test.sh and cuda-diagnostic.sh exist in the same directory as this script."
 fi
 
 # Connect to container
