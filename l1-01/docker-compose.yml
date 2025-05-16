@@ -4,7 +4,7 @@
 
 services:
   advantech:
-    image: harbor.arfa.wise-paas.com/advantech_coe_container/l1-01:edgesync
+    image: edgesync.azurecr.io/advantech/x-edgesync-base-container:1.0.0-Ubuntu22.04-x86
     container_name: advantech-l1-01
     privileged: true
     volumes:
