@@ -68,7 +68,7 @@ chmod +x build.sh
 
 The L1-01 container provides access to Advantech hardware features through the SUSI  APIs.
 
-As in [GitHub - EdgeSync-Adv/advantechiot](https://github.com/EdgeSync-Adv/advantechiot):
+As in [GitHub - EdgeSync-Adv/advantechiot](https://github.com/Advantech-EdgeSync/advantechiot):
 ### Key Features
 - Python interface for hardware sensors and GPIO
 - Real-time monitoring of system parameters
@@ -419,7 +419,7 @@ The container uses the following Docker settings:
 ### L1-01 Container Issues
 
 For issues related to the advantechiot package:
-- Create an issue on GitHub: https://github.com/EdgeSync-Adv/advantechi
+- Create an issue on GitHub: https://github.com/Advantech-EdgeSync/advantechiot
 
 ### L2-01 Container Issues
 
